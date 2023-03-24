@@ -3,17 +3,17 @@ import styles from './styles.module.css';
 
 interface Props {
   isLoading: boolean,
-  handleClick: () => void
+  onClick: () => void
 }
 
-const LoadMoreButton: React.FC<Props> = ({ isLoading, handleClick }) => {
+const LoadMoreButton: React.FC<Props> = ({ isLoading, onClick }) => {
   const computedStyles = {
     background: isLoading ? 'gray' : '#C4232A',
   };
 
   return (
     <button 
-      onClick={handleClick}
+      onClick={onClick}
       style={computedStyles}
       className={styles.button}
       disabled={isLoading}

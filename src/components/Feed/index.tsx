@@ -4,7 +4,7 @@ import LoadMoreButton from '../LoadMoreButton';
 import Story, { StoryProps } from '../Story';
 
 const Feed: React.FC = () => {
-  const { stories, loading, error } = useFeed();
+  const { stories, loading, error, fetchOldStories } = useFeed();
 
   if (error) console.error(error);
 
@@ -12,6 +12,7 @@ const Feed: React.FC = () => {
     <div>
       <LoadMoreButton 
         isLoading={loading}
+        onClick={fetchOldStories}
       />
       <ol>
         {stories?.map(((story: StoryProps) => {

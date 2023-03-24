@@ -8,6 +8,10 @@ const useFeed = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const fetchOldStories = () => {
+    console.log('fetch old stories fired')
+  };
+
   useEffect(() => {
     setLoading(true);
     fetch(API_URL).then((res) => {
@@ -24,7 +28,7 @@ const useFeed = () => {
     });
   }, [])
 
-  return {stories, loading, error}
+  return {stories, loading, error, fetchOldStories}
 };
 
 export default useFeed;
