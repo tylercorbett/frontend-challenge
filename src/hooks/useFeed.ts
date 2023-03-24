@@ -5,9 +5,9 @@ import { StoryProps } from '../components/Story';
 
 const useFeed = () => {
   const [stories, setStories] = useState<StoryProps[]>([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState(null);
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState<number>(2);
 
   const fetchStories = (url: string) => {
     setLoading(true);
