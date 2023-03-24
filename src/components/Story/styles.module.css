@@ -3,10 +3,11 @@
   display: grid;
   grid-template-columns: 38% 1fr;
   padding: 1rem;
-  margin: 1rem 0;
+  margin: 1rem .5rem;
   border: 1px solid lightgray;
   grid-gap: 1rem;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .title {
@@ -37,8 +38,19 @@
   height: 10rem;
 }
 
+.name {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-width: 17rem;
+}
+
 @media only screen and (max-width: 600px) {
   .thumbnail {
     height: 8rem;
+  }
+
+  .name {
+    max-width: 10rem;
   }
 }
