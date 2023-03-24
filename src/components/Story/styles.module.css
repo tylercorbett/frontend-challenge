@@ -1,3 +1,26 @@
 .Story {
-  
+  list-style: none;
+  display: grid;
+  grid-template-columns: 38% 1fr;
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 1px solid lightgray;
+  grid-gap: 1rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.2rem;
+  line-height: 1.2;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
