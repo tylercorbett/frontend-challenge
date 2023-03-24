@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { API_URL } from '../constants';
-import formatStories from '../helpers/formatStories';
+import { formatStories } from '../helpers/formatStories';
 import { StoryProps } from '../components/Story';
+import { filterForNewStories } from '../helpers/filterForNewStories';
 
 const useFeed = () => {
   const [stories, setStories] = useState<StoryProps[]>([]);
@@ -30,9 +31,22 @@ const useFeed = () => {
     setPage(page + 1);
   };
 
-  // Checks if the API has new stories to add
+  // Checks if the API has new stories to add and adds them to the top of the list
   const prependNewStories = () => {
-    console.log('prepend fired');
+    fetch(API_URL).then((res) => {
+      res.json().then((json) => {
+        const freshFormattedStories = formatStories(json);
+        const newStories = filterForNewStories(stories, freshFormattedStories);
+
+        if (newStories.length > 0) {
+          const updatedStories = [...newStories, ...stories];
+          setStories(updatedStories);
+        }
+      });
+    })
+    .catch((err) => {
+      setError(err);
+    })
   };
 
   useEffect(() => {
@@ -40,7 +54,7 @@ const useFeed = () => {
 
     const interval = setInterval(() => {
       prependNewStories();
-    }, 10000);
+    }, 3000);
     return () => clearInterval(interval)
   }, [])
 

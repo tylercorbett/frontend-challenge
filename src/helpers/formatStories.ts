@@ -1,4 +1,4 @@
-const formatStories = (stories: any[]) => {
+export const formatStories = (stories: any[]) => {
   const result = stories.map((story: any) => {
     const { id, author: { name, avatar }, title, thumbnail: { desktop } } = story;
     return {
@@ -12,5 +12,3 @@ const formatStories = (stories: any[]) => {
   
   return result;
 };
-
-export default formatStories;

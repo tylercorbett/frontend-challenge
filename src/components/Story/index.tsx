@@ -6,7 +6,7 @@ export interface StoryProps {
   title: string,
   authorAvatarSrc: string,
   authorName: string,
-  id: string,
+  id: number,
 }
 
 const fallbackAvatarSrc = 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg?crop=4%3A3&width=560&height=560';
