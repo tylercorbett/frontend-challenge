@@ -47,7 +47,7 @@ const Feed: React.FC = () => {
         isLoading={loading}
       />
       <ol>
-        {fakeData.map((story => {
+        {stories?.map((story => {
           return (
             <Story {...story}/> 
           );
