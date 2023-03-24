@@ -9,15 +9,11 @@ const useFeed = () => {
   const [error, setError] = useState(null);
   const [page, setPage] = useState(2);
 
-  const fetchOldStories = () => {
-    console.log('fetch old stories fired')
-    const urlWithPage = API_URL + `?page=${page}`;
-    console.log('urlwithpage', urlWithPage);
+  const fetchStories = (url: string) => {
     setLoading(true);
-    fetch(urlWithPage).then((res) => {
+    fetch(url).then((res) => {
       res.json().then((json) => {
         const formattedStories = formatStories(json);
-        console.log('formattedStories after new fetch', formattedStories);
         setStories(formattedStories);
       });
     })
@@ -25,25 +21,17 @@ const useFeed = () => {
       setError(err);
     })
     .finally(() => {
-      setPage(page + 1);
       setLoading(false);
     });
   };
 
+  const fetchOldStories = () => {
+    fetchStories(API_URL + `?page=${page}`);
+    setPage(page + 1);
+  };
+
   useEffect(() => {
-    setLoading(true);
-    fetch(API_URL).then((res) => {
-      res.json().then((json) => {
-        const formattedStories = formatStories(json);
-        setStories(formattedStories);
-      });
-    })
-    .catch((err) => {
-      setError(err);
-    })
-    .finally(() => {
-      setLoading(false);
-    });
+    fetchStories(API_URL);
   }, [])
 
   return {stories, loading, error, fetchOldStories}
