@@ -12,7 +12,7 @@ const Story: React.FC<Props> = ({ thumbnailSrc = 'https://chumley.barstoolsports
   return (
     <li className={styles.Story}>
       <img className={styles.thumbnail} src={thumbnailSrc} alt='Post thumbnail' /> 
-      <div>
+      <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.author}>
           <img className={styles.avatar} src={authorAvatarSrc} alt={`Photo of ${authorName}`} />
