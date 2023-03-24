@@ -14,7 +14,7 @@ const Feed: React.FC = () => {
         {stories?.map(((story: StoryProps) => {
           return (
             <Story {...story}/> 
-            );
+          );
           }))}
       </ol>
       <LoadMoreButton 
