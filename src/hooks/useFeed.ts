@@ -32,6 +32,11 @@ const useFeed = () => {
 
   useEffect(() => {
     fetchStories(API_URL);
+
+    const interval = setInterval(() => {
+      console.log('This will run every second!');
+    }, 10000);
+    return () => clearInterval(interval);
   }, [])
 
   return {stories, loading, error, fetchOldStories}
