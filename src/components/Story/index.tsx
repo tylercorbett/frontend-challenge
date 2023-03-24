@@ -19,7 +19,7 @@ const Story: React.FC<StoryProps> = ({ id, thumbnailSrc, title, authorAvatarSrc,
         <h3 className={styles.title}>{title}</h3>
         <div className={styles.author}>
           <img className={styles.avatar} src={authorAvatarSrc ?? fallbackAvatarSrc} alt={`Photo of ${authorName}`} />
-          <h4>{authorName}</h4>
+          <h4 className={styles.name}>{authorName}</h4>
         </div>
       </div>     
     </li>

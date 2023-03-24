@@ -7,9 +7,27 @@ const useFeed = () => {
   const [stories, setStories] = useState<StoryProps[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(2);
 
   const fetchOldStories = () => {
     console.log('fetch old stories fired')
+    const urlWithPage = API_URL + `?page=${page}`;
+    console.log('urlwithpage', urlWithPage);
+    setLoading(true);
+    fetch(urlWithPage).then((res) => {
+      res.json().then((json) => {
+        const formattedStories = formatStories(json);
+        console.log('formattedStories after new fetch', formattedStories);
+        setStories(formattedStories);
+      });
+    })
+    .catch((err) => {
+      setError(err);
+    })
+    .finally(() => {
+      setPage(page + 1);
+      setLoading(false);
+    });
   };
 
   useEffect(() => {
