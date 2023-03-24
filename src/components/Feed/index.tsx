@@ -1,4 +1,5 @@
 import React from 'react';
+import LoadMoreButton from '../LoadMoreButton';
 import Story from '../Story';
 
 const fakeData = [
@@ -30,13 +31,16 @@ const fakeData = [
 
 const Feed: React.FC = () => {
   return (
-    <ol>
-      {fakeData.map((story => {
-        return (
-          <Story {...story}/> 
-        );
-      }))}
-    </ol>
+    <div>
+      <LoadMoreButton />
+      <ol>
+        {fakeData.map((story => {
+          return (
+            <Story {...story}/> 
+          );
+        }))}
+      </ol>
+    </div>
   );
 };
 
