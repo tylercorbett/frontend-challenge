@@ -67,7 +67,7 @@ const useFeed = () => {
 
     const interval = setInterval(() => {
       prependNewStories();
-    }, 3000);
+    }, 10000);
     return () => clearInterval(interval)
   }, [])
 
