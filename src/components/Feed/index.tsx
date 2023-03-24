@@ -10,20 +10,20 @@ const fakeData = [
   },
   {
     thumbnailSrc: 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg',
-    title: 'Trust Me, You Want To Try Out This Warzone Season 4 Loadout',
-    authorName: 'Skye Brewster',
+    title: 'This League Episode 49: Sixers Meltdown, Zion Wants Out & More',
+    authorName: 'Chad Billingslea',
     authorAvatarSrc: 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg'
   },
   {
     thumbnailSrc: 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg',
-    title: 'Trust Me, You Want To Try Out This Warzone Season 4 Loadout',
-    authorName: 'Skye Brewster',
+    title: 'For Some Reason People Are Concerned About a Play Going On In China Where Actors Are Chased By Wolves In a Crowded Theatre',
+    authorName: 'Damian Lillard',
     authorAvatarSrc: 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg'
   },
   {
     thumbnailSrc: 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg',
-    title: 'Trust Me, You Want To Try Out This Warzone Season 4 Loadout',
-    authorName: 'Skye Brewster',
+    title: 'The Amount Of Slander Orange Freeze Pops Get Is Uncalled For An Utter Bullshit (Bonus: Freeze Pop Power Rankings)',
+    authorName: 'Tyler Corbett',
     authorAvatarSrc: 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg'
   },
 ];
