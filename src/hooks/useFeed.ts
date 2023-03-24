@@ -30,12 +30,18 @@ const useFeed = () => {
     setPage(page + 1);
   };
 
+  // Checks if the API has new stories to add
+  const prependNewStories = () => {
+    console.log('prepend fired');
+  };
+
   useEffect(() => {
     fetchStories(API_URL);
 
-    setInterval(() => {
-      console.log('This will run every second!');
+    const interval = setInterval(() => {
+      prependNewStories();
     }, 10000);
+    return () => clearInterval(interval)
   }, [])
 
   return {stories, loading, error, fetchOldStories}
