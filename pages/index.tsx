@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import Story from '../src/components/Story';
+import Feed from '../src/components/Feed';
 
 export default function Home() {
   return (
@@ -13,10 +13,7 @@ export default function Home() {
         <Image src="/logo.png" alt="Barstool Sports" width="200" height="64" />
       </header>
       <main>
-      <Story />
-      <Story />
-      <Story />
-
+      <Feed />
       </main>
 
       <footer className="flex justify-center items-center w-full py-5 mt-10 border-t border-[#eaeaea]">

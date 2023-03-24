@@ -8,7 +8,7 @@ interface Props {
   authorName: string,
 }
 
-const Story: React.FC<Props> = ({ thumbnailSrc = 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg', title = 'Trust Me, You Want To Try Out This Warzone Season 4 Loadout', authorAvatarSrc = 'https://chumley.barstoolsports.com/union/defaults/thumbnail.jpg?crop=4%3A3', authorName = 'Skye Brewster' }) => {
+const Story: React.FC<Props> = ({ thumbnailSrc, title, authorAvatarSrc, authorName }) => {
   return (
     <li className={styles.Story}>
       <img className={styles.thumbnail} src={thumbnailSrc} alt='Post thumbnail' /> 
