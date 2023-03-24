@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 import { API_URL } from '../constants';
 import formatStories from '../helpers/formatStories';
+import { StoryProps } from '../components/Story';
 
 const useFeed = () => {
-  const [stories, setStories] = useState(null);
+  const [stories, setStories] = useState<StoryProps[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
