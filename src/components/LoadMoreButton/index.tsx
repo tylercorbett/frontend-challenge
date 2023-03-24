@@ -6,7 +6,7 @@ interface Props {
   handleClick: () => void
 }
 
-const LoadMoreButton: React.FC<Props> = ({ isLoading = false, handleClick }) => {
+const LoadMoreButton: React.FC<Props> = ({ isLoading, handleClick }) => {
   const computedStyles = {
     background: isLoading ? 'gray' : '#C4232A',
   };
@@ -16,6 +16,7 @@ const LoadMoreButton: React.FC<Props> = ({ isLoading = false, handleClick }) => 
       onClick={handleClick}
       style={computedStyles}
       className={styles.button}
+      disabled={isLoading}
     >
         {isLoading ? 'Loading...' : 'Load More' }
     </button>
