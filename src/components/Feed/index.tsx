@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import LoadMoreButton from '../LoadMoreButton';
 import Story from '../Story';
 
@@ -31,7 +31,6 @@ const fakeData = [
 
 const Feed: React.FC = () => {
   const [stories, setStories] = useState(null);
-  
 
   return (
     <div>
