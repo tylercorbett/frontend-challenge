@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './styles.module.css';
 
-interface Props {
+export interface StoryProps {
   thumbnailSrc: string,
   title: string,
   authorAvatarSrc: string,
@@ -9,7 +9,7 @@ interface Props {
   id: string,
 }
 
-const Story: React.FC<Props> = ({ id, thumbnailSrc, title, authorAvatarSrc, authorName }) => {
+const Story: React.FC<StoryProps> = ({ id, thumbnailSrc, title, authorAvatarSrc, authorName }) => {
   return (
     <li className={styles.Story} key={id}>
       <img className={styles.thumbnail} src={thumbnailSrc} alt='Post thumbnail' /> 
