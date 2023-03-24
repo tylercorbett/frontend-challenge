@@ -6,11 +6,12 @@ interface Props {
   title: string,
   authorAvatarSrc: string,
   authorName: string,
+  id: string,
 }
 
-const Story: React.FC<Props> = ({ thumbnailSrc, title, authorAvatarSrc, authorName }) => {
+const Story: React.FC<Props> = ({ id, thumbnailSrc, title, authorAvatarSrc, authorName }) => {
   return (
-    <li className={styles.Story}>
+    <li className={styles.Story} key={id}>
       <img className={styles.thumbnail} src={thumbnailSrc} alt='Post thumbnail' /> 
       <div className={styles.body}>
         <h3 className={styles.title}>{title}</h3>
