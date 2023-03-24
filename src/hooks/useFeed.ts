@@ -27,7 +27,20 @@ const useFeed = () => {
   };
 
   const fetchOldStories = () => {
-    fetchStories(API_URL + `?page=${page}`);
+    setLoading(true);
+    fetch(API_URL + `?page=${page}`).then((res) => {
+      res.json().then((json) => {
+        const formattedStories = formatStories(json);
+        const newStories = [...stories, ...formattedStories];
+        setStories(newStories);
+      });
+    })
+    .catch((err) => {
+      setError(err);
+    })
+    .finally(() => {
+      setLoading(false);
+    });
     setPage(page + 1);
   };
 
