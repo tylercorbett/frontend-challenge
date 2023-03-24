@@ -44,7 +44,7 @@ const useFeed = () => {
     setPage(page + 1);
   };
 
-  // Checks if the API has new stories to add and adds them to the top of the list
+  // Checks if the API has new stories to add and prepends them to the top of the list
   const prependNewStories = () => {
     fetch(API_URL).then((res) => {
       res.json().then((json) => {
