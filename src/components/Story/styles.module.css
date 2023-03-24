@@ -7,7 +7,6 @@
   border: 1px solid lightgray;
   grid-gap: 1rem;
   cursor: pointer;
-  max-height: 12rem;
 }
 
 .title {
