@@ -39,8 +39,6 @@ const Feed: React.FC = () => {
 
   if (error) console.error(error);
 
-  console.log(stories)
-
   return (
     <div>
       <LoadMoreButton 

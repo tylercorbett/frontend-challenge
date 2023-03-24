@@ -10,7 +10,6 @@ interface Props {
 }
 
 const Story: React.FC<Props> = ({ id, thumbnailSrc, title, authorAvatarSrc, authorName }) => {
-  console.log('thumbnailSrc', thumbnailSrc);
   return (
     <li className={styles.Story} key={id}>
       <img className={styles.thumbnail} src={thumbnailSrc} alt='Post thumbnail' /> 
