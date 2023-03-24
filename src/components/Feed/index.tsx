@@ -10,17 +10,17 @@ const Feed: React.FC = () => {
 
   return (
     <div>
-      <LoadMoreButton 
-        isLoading={loading}
-        onClick={fetchOldStories}
-      />
       <ol>
         {stories?.map(((story: StoryProps) => {
           return (
             <Story {...story}/> 
-          );
-        }))}
+            );
+          }))}
       </ol>
+      <LoadMoreButton 
+        isLoading={loading}
+        onClick={fetchOldStories}
+      />
     </div>
   );
 };
