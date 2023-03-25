@@ -8,4 +8,9 @@ describe('filterForNewStories', () => {
     const result = filterForNewStories(arr1, arr2);
     expect(result).toEqual([{ id: 1, name: 'Alice' }, { id: 3, name: 'Charlie' }]);
   });
+
+  it('should return an empty array if only duplicates are found', () => {
+    const result = filterForNewStories(arr2, arr2);
+    expect(result).toEqual([]);
+  });
 });
