@@ -11,6 +11,7 @@ const Feed: React.FC = () => {
   return (
     <div>
       <ol>
+        {stories.length <= 0 && <h3>No stories found</h3>}
         {stories?.map(((story: StoryProps) => {
           return (
             <Story {...story}/> 
